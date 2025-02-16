@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { styles } from "../style";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../../../public/assets";
 import Link from "next/link";
 import Image from "next/image";
 import { TbMenu4 } from "react-icons/tb";

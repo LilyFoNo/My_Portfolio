@@ -2,12 +2,11 @@ import {
   About,
   Contact,
   Experience,
-  Feedbacks,
   Hero,
+  Feedbacks,
   Navbar,
   Tech,
   Works,
-  StarsCanvas,
 } from "./components";
 
 export default function Home() {
@@ -18,15 +17,14 @@ export default function Home() {
           <Navbar />
           <Hero />
         </div>
-        <About />
+        {/* <About />
         <Experience />
         <Tech />
         <Works />
         <Feedbacks />
         <div className="relative z-0">
           <Contact />
-          <StarsCanvas />
-        </div>
+        </div> */}
       </div>
     </>
   );
