@@ -75,14 +75,16 @@ export const slideIn = (direction:string, type:string, delay:number, duration:nu
   };
 };
 
-export const staggerContainer = (staggerChildren:string, delayChildren:number) => {
+export const staggerContainer = (staggerAmount = 0.3) => {
   return {
-    hidden: {},
+    hidden: { opacity: 0 },
     show: {
+      opacity: 1,
       transition: {
-        staggerChildren: staggerChildren,
-        delayChildren: delayChildren || 0,
+        staggerChildren: staggerAmount,
+        delayChildren: 0.3,
       },
     },
   };
 };
+

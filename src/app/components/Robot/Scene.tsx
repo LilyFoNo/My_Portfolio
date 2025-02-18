@@ -2,24 +2,37 @@
 
 import { Canvas } from "@react-three/fiber";
 import Model from "./Model";
-import { Suspense } from "react";
-import { useProgress, Html, ScrollControls } from "@react-three/drei";
-
-function Loader() {
-  const {progress, active} = useProgress()
-
-  return <Html center>{progress.toFixed(1)}% loaded</Html>
-}
+import { Suspense, useState } from "react";
+import { ScrollControls, OrbitControls } from "@react-three/drei";
+import CanvasLoader from "../Loader";
 
 export default function Scene() {
+  const [isDragging, setIsDragging] = useState(false);
 
+  const handlePointerDown = () => {
+    setIsDragging(true);
+  };
+
+  const handlePointerUp = () => {
+    setIsDragging(false);
+  };
   return (
-    <Canvas gl={{antialias: true}} dpr={[1, 1.5]} className="relative h-svh">
+    <Canvas
+      gl={{ antialias: true }}
+      dpr={[2, 1.5]}
+      camera={{ position: [5, 5, 25], fov: 13 }}
+      className={`relative h-screen ${
+        isDragging ? "cursor-grabbing" : "cursor-grab"
+      }`}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+    >
       <directionalLight position={[-5, -5, 5]} intensity={4} />
-      <Suspense fallback={<Loader />}>
-      <ScrollControls damping={0.2} pages={2}>
-      <Model />
-      </ScrollControls>
+      <Suspense fallback={<CanvasLoader />}>
+        <ScrollControls damping={0.2} pages={2}>
+          <OrbitControls enableZoom={false} />
+          <Model />
+        </ScrollControls>
       </Suspense>
     </Canvas>
   );

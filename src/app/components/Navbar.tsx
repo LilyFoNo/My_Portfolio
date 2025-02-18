@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { styles } from "../style";
 import { navLinks } from "../constants";
 import Link from "next/link";
@@ -26,7 +26,7 @@ const Navbar = () => {
             }}
           >
             <Image
-              src={"/img/logo.svg"}
+              src={"/img/logo.png"}
               alt={"logo"}
               width={200}
               height={200}

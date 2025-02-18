@@ -27,7 +27,7 @@ import {
   
   export const navLinks = [
     {
-      id: "about",
+      id: "#about",
       title: "About",
     },
     {
@@ -46,15 +46,15 @@ import {
       icon: web,
     },
     {
-      title: "React Native Developer",
+      title: "React Developer",
       icon: mobile,
     },
     {
-      title: "Backend Developer",
+      title: "Next Developer",
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "Backend Developer",
       icon: creator,
     },
   ];
