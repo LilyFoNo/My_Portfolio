@@ -20,7 +20,7 @@ export default function Scene() {
     <Canvas
       gl={{ antialias: true }}
       dpr={[2, 1.5]}
-      camera={{ position: [5, 5, 25], fov: 13 }}
+      camera={{ position: [5, 15, 20], fov: 30 }}
       className={`relative h-screen ${
         isDragging ? "cursor-grabbing" : "cursor-grab"
       }`}

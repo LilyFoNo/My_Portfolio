@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { styles } from "../style";
+import { styles } from "../styles";
 import { navLinks } from "../constants";
 import Link from "next/link";
 import Image from "next/image";

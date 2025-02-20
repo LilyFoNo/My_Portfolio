@@ -1,12 +1,11 @@
 "use client";
 import { Tilt } from "react-tilt";
 import { motion } from "motion/react";
-import { styles } from "../style";
+import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import Image, { StaticImageData } from "next/image";
 import { staggerContainer } from "../utils/motion";
-import SectionWrapper from "../hoc/SectionWrapper";
 
 interface IService {
   index: number;
@@ -51,8 +50,15 @@ const ServiceCard = ({ index, title, icon }: IService) => {
 const About = () => {
   return (
     <>
-      <section id="about">
-        <motion.div variants={textVariant(1)}>
+      <motion.section
+        variants={staggerContainer()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+        id="about"
+      >
+        <motion.div variants={textVariant(1)} className="mt-10">
           <p className={styles.sectionSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>Overview.</h2>
         </motion.div>
@@ -75,9 +81,9 @@ const About = () => {
             );
           })}
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };
 
-export default SectionWrapper({ Component: About, idName: "#about" });
+export default About;

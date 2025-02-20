@@ -1,6 +1,6 @@
 "use client";
 
-import { styles } from "../style";
+import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import dynamic from "next/dynamic";
 import { motion } from "motion/react";
@@ -29,7 +29,7 @@ const Hero = () => {
           </p>
         </div>
         <div className="relative w-[50%]">
-          <div className="w-full h-screen fixed -right-[40rem]">
+          <div className="w-full h-screen fixed -right-[40rem] -top-20">
             <Scene />
           </div>
         </div>

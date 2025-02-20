@@ -19,11 +19,11 @@ export default function Home() {
           <Hero />
         </div>
         <About />
-        {/* <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className="relative z-0">
+        <Experience />
+        {/* <Tech /> */}
+        {/* <Works /> */}
+        {/* <Feedbacks /> */}
+        {/* <div className="relative z-0">
           <Contact />
         </div> */}
       </div>
