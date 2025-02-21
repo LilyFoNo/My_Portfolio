@@ -35,9 +35,9 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-[70rem] h-[50rem]">
+      {/* <div className="w-[70rem] h-[50rem]"> */}
         <ComputersCanvas />
-      </div>
+      {/* </div> */}
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center ">
         <a href="#about">

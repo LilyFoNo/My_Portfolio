@@ -16,20 +16,21 @@ const Computers = ({ isMobile }: IComputers) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
+      <hemisphereLight intensity={0.4}  groundColor="gray" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
-        intensity={1}
+        intensity={5}
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight intensity={1} />
+      <ambientLight intensity={1} />
+      <pointLight position={[10, 20, 10]} intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.5 : 0.7}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -3]}
+        scale={isMobile ? 0.7 : 0.75}
+        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>

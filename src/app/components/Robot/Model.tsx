@@ -4,12 +4,12 @@ import { Group } from "three";
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
-useGLTF.preload("/robot_playground.glb");
+useGLTF.preload("/robot/robot_playground.glb");
 
 export default function Model() {
   const group = useRef<Group>(null);
   const { nodes, materials, animations, scene } = useGLTF(
-    "/robot_playground.glb"
+    "/robot/robot_playground.glb"
   );
 
   const { actions, clips } = useAnimations(animations, scene);

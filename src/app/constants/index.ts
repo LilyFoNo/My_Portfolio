@@ -85,9 +85,9 @@ const technologies = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Project 1",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Web-based platform that allows users to search for...",
     tags: [
       {
         name: "react",
@@ -98,17 +98,17 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "nodejs",
         color: "pink-text-gradient",
       },
     ],
-    image: "",
+    image: "/assets/herobg.png",
     link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "Project 2",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Web application that enables users to search for...",
     tags: [
       {
         name: "react",
@@ -123,28 +123,28 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "",
+    image: "/assets/herobg.png",
     link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Project 3",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A comprehensive platform that allows users to...",
     tags: [
       {
         name: "nextjs",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "mongodb",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "tailwind",
         color: "pink-text-gradient",
       },
     ],
-    image: "",
+    image: "/assets/herobg.png",
     link: "https://github.com/",
   },
 ];

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { staggerContainer } from "../utils/motion";
 
 interface IService {
@@ -64,7 +64,7 @@ const About = () => {
         </motion.div>
 
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+          variants={fadeIn("", "", 1, 1)}
           className="mt-4 text-secondary text-[1.2rem] leading-[2rem] text-justify"
         >
           I'm a skilled software developer with experience in TypeScript and
