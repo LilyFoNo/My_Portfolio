@@ -10,7 +10,7 @@ import { staggerContainer } from "../utils/motion";
 interface IService {
   index: number;
   title: string;
-  icon: StaticImageData;
+  icon: string;
 }
 
 const defaultOptions = {
