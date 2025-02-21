@@ -19,9 +19,9 @@ export default function Home() {
         <About />
         <Tech />
         <Works />
-        {/* <div className="relative z-0">
+        <div className="relative z-0">
           <Contact />
-        </div> */}
+        </div>
       </div>
     </>
   );
