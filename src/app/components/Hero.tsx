@@ -20,9 +20,9 @@ const Hero = () => {
       className="relative w-full h-screen mx-auto"
     >
       <div
-        className={`${styles.paddingX} absolute inset-0 top-[120px] maxw-7xl mx-auto flex justify-between items-start gap-5`}
+        className={`${styles.paddingX} absolute inset-0 top-[120px] maxw-7xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-5`}
       >
-        <div className="flex">
+        <div className="order-2 lg:order-none flex">
           <div className="flex flex-col justify-center items-center mt-5">
             <div className="w-5 h-5 rounded-full bg-[#915eff]" />
 
@@ -31,7 +31,7 @@ const Hero = () => {
               animate={{
                 height: "20rem",
                 opacity: 1,
-                transition: { duration: 1 },
+                transition: { duration: 1, ease: "easeIn" },
               }}
               className="w-1 violet-gradient"
             />
@@ -89,24 +89,57 @@ const Hero = () => {
             <Scene />
           </div>
         </div> */}
-        <div className=" w-[50rem] h-[40rem] relative">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: { delay: 2, duration: 0.4, ease: "easeIn" },
-            }}
-            className="w-[15rem] h-[15rem] rounded-full absolute left-[17rem] top-[13rem] z-10 flex items-center justify-center"
-          >
-            <div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten">
+        <div className="order-1 lg:order-none xl:w-[50rem] xl:h-[40rem] lg:w-[20rem] lg:h-[20rem] relative">
+          <div className="img absolute xl:left-[17rem] xl:top-[13rem] lg:left-[5rem] lg:top-[5rem] z-10">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { delay: 2, duration: 0.4, ease: "easeIn" },
+              }}
+              className="relative rounded-full flex items-center justify-center lg:w-[9rem] lg:h-[9rem] xl:w-[15.7rem] xl:h-[15.7rem]"
+            >
               <Image
                 src={"/profile.jpeg"}
                 alt="profile picture"
                 fill
-                className="object-contain rounded-full"
+                quality={100}
+                className=" rounded-full"
               />
-            </div>
-          </motion.div>
+            </motion.div>
+
+            <motion.svg
+              className="w-[300px] xl:w-[506px] h-[300px] xl-[506px] absolute -top-[1.5rem] -right-32"
+              fill="transparent"
+              viewBox="0 0 506 506"
+              xmlns="http://www.w3.0rg/2000/svg"
+            >
+              <motion.circle
+                cx="253"
+                cy="253"
+                r="210"
+                stroke="#060816"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{ strokeDasharray: "24 10 0 0" }}
+                animate={{
+                  strokeDasharray: [
+                    "15 120 25 25",
+                    "16 25 92 72",
+                    "4 250 22 22",
+                  ],
+                  rotate: [120, 360],
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            </motion.svg>
+          </div>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{
