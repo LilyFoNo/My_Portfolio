@@ -11,28 +11,11 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggel, setToggle] = useState(false);
-  const [hasScroll, setHasScroll] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setHasScroll(false);
-      } else {
-        setHasScroll(true);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
+  const pathname = usePathname();
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <>
-      <div
-        className={`fixed w-full ${
-          hasScroll ? "bg-primary" : "bg-transparent"
-        } z-20 top-0 `}
-      >
+      <div className={`fixed w-full bg-primary z-20 top-0 `}>
         <nav className={`${styles.paddingX} flex items-center py-2`}>
           <div className="w-full flex justify-between items-center max-w-7xl mx-auto  ">
             <Link
@@ -59,18 +42,18 @@ const Navbar = () => {
               </p>
             </Link>
             <ul className="list-none hidden sm:flex flex-row gap-10">
-              {navLinks.map((link) => {
+              {navLinks.map((link, index) => {
                 return (
                   <li
-                    key={link.id}
+                    key={index}
                     className={`${
-                      active === link.title
+                      pathname === link.path
                         ? "text-transparent bg-clip-text bg-gradient-to-r from-[#94ccb4] via-[#d05de2] to-[#f0aa63]"
                         : "text-secondary"
                     } hover:text-white text-[18px] font-medium cursor-pointer hover:border-b hover:border-[#7e00ff] hover:rounded-[10px]`}
                     onClick={() => setActive(link.title)}
                   >
-                    <Link href={link.id} className=" font-preahvihear px-1">
+                    <Link href={link.path} className=" font-preahvihear px-1">
                       {link.title}
                     </Link>
                   </li>
@@ -97,10 +80,10 @@ const Navbar = () => {
                 } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
               >
                 <ul className="list-none flex justify-end items-start flex-col gap-4">
-                  {navLinks.map((link) => {
+                  {navLinks.map((link, index) => {
                     return (
                       <li
-                        key={link.id}
+                        key={index}
                         className={`${
                           active === link.title
                             ? "text-white"
@@ -111,7 +94,7 @@ const Navbar = () => {
                           setActive(link.title);
                         }}
                       >
-                        <Link href={link.id}>{link.title}</Link>
+                        <Link href={link.path}>{link.title}</Link>
                       </li>
                     );
                   })}
@@ -120,7 +103,7 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
-        <hr className={`hidden ${hasScroll ? "block md:block " : "hidden"}`} />
+        <hr />
       </div>
     </>
   );

@@ -18,6 +18,11 @@
   color-scheme: dark;
 }
 
+body {
+  background: linear-gradient(to bottom, #12071f, #2f204e);
+  min-height: 100vh;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -50,20 +55,6 @@ hr {
     #804dee 0%,
     rgba(60, 51, 80, 0) 100%
   );
-}
-
-.green-pink-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-}
-
-.orange-text-gradient {
-  background: #f12711;
-  background: -webkit-linear-gradient(to top, #f12711, #f5af19);
-  background: linear-gradient(to top, #f12711, #f5af19);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .green-text-gradient {

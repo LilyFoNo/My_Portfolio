@@ -1,17 +1,10 @@
 "use client";
-import { Tilt } from "react-tilt";
+
 import { motion } from "motion/react";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
-import Image from "next/image";
 import { staggerContainer } from "../utils/motion";
-import Tech from "./Tech";
-
-interface IService {
-  index: number;
-  title: string;
-  icon: string;
-}
+import Tech from "../components/Tech";
 
 const defaultOptions = {
   reverse: false,
@@ -32,6 +25,7 @@ const About = () => {
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
         id="about"
       >

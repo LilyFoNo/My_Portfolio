@@ -15,7 +15,7 @@ const Ball = ({ icon }: { icon: { imgUrl: string } }) => {
   return (
     <>
       <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-        <ambientLight intensity={0.25} />
+        <ambientLight intensity={0.5} />
         <directionalLight position={[0, 0, 0.08]} />
         <mesh castShadow receiveShadow scale={2.75}>
           <icosahedronGeometry args={[1, 2]} />
@@ -58,6 +58,7 @@ const BallCanvas = ({ icon }: { icon: { imgUrl: string } }) => {
       >
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls enableZoom={false} />
+          <ambientLight intensity={0.5} />
           <Ball icon={{ imgUrl: icon.imgUrl }} />
         </Suspense>
 
