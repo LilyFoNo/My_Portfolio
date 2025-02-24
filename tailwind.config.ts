@@ -1,7 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+export default {
   content: ["./src/**/*.{ts,tsx}"],
-  mode: "jit",
   theme: {
     extend: {
       colors: {
@@ -14,6 +14,8 @@ module.exports = {
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
+        linkedin: "0 0 5px #0072b1, 0 0 25px #0072b1, 0 0 50px #0072b1, 0 0 200px #0072b1",
+        gitHub: "0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 200px #fff",
       },
       screens: {
         xs: "450px",
@@ -21,7 +23,22 @@ module.exports = {
       backgroundImage: {
         "hero-pattern": "url('/assets/herobg.png')",
       },
+      fontFamily: {
+        preahvihear: ["Preahvihear", "sans-serif"],
+      },
     },
   },
-  plugins: [],
-};
+  plugins: [
+    function ({ addUtilities }: any) {
+      addUtilities(
+        {
+          ".webkit-reflect": {
+            WebkitBoxReflect:
+              "below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4))",
+          },
+        },
+        ["responsive", "hover"]
+      );
+    },
+  ],
+} satisfies Config;

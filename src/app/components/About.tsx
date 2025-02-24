@@ -2,10 +2,10 @@
 import { Tilt } from "react-tilt";
 import { motion } from "motion/react";
 import { styles } from "../styles";
-import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import Image from "next/image";
 import { staggerContainer } from "../utils/motion";
+import Tech from "./Tech";
 
 interface IService {
   index: number;
@@ -54,7 +54,7 @@ const About = () => {
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: false, amount: 0.25 }}
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
         id="about"
       >
@@ -67,20 +67,22 @@ const About = () => {
           variants={fadeIn("", "", 1, 1)}
           className="mt-4 text-secondary text-[1.2rem] leading-[2rem] text-justify"
         >
-          I'm a skilled software developer with experience in TypeScript and
-          JavaScript, and expertise in frameworks like React, Node.js, and
-          Three.js. I'm a quick learner and collaborate closely with clients to
-          create efficient, scalable, and user-friendly solutions that solve
-          real-world problems. Let's work together to bring your ideas to life!
+          I&apos;m a skilled software developer with experience in TypeScript
+          and JavaScript, specializing in frameworks like React, Node.js, and
+          Next.js. As a quick learner, I thrive in collaborative environments,
+          working closely with teams to create efficient, scalable, and
+          user-friendly solutions that address real-world challenges. Let&apos;s
+          work together to bring your ideas to life!
         </motion.p>
 
-        <div className="mt-20 flex flex-wrap gap-10 justify-center items-center">
+        {/* <div className="mt-20 flex flex-wrap gap-10 justify-center items-center">
           {services.map((service, index) => {
             return (
               <ServiceCard key={service.title} index={index} {...service} />
             );
           })}
-        </div>
+        </div> */}
+        <Tech />
       </motion.section>
     </>
   );
