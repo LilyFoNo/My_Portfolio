@@ -7,7 +7,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { slideIn } from "../utils/motion";
 
-const Contact = () => {
+const ContactComponent = () => {
   const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
@@ -99,4 +99,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactComponent;

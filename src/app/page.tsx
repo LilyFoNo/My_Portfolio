@@ -1,8 +1,8 @@
 import {
-  About,
-  Contact,
+  AboutComponent,
+  ContactComponent,
   Hero,
-  Works,
+  WorksComponent,
   StarsCanvas
 } from "./components";
 
@@ -13,11 +13,10 @@ export default function Home() {
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Hero />
         </div>
-        <About />
-        {/* <Tech /> */}
-        <Works />
+        <AboutComponent />
+        <WorksComponent />
         <div className="relative z-0">
-          <Contact />
+          <ContactComponent />
           <StarsCanvas />
         </div>
       </div>

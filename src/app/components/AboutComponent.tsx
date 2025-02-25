@@ -1,17 +1,10 @@
 "use client";
-import { Tilt } from "react-tilt";
+
 import { motion } from "motion/react";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
-import Image from "next/image";
 import { staggerContainer } from "../utils/motion";
 import Tech from "./Tech";
-
-interface IService {
-  index: number;
-  title: string;
-  icon: string;
-}
 
 const defaultOptions = {
   reverse: false,
@@ -25,7 +18,7 @@ const defaultOptions = {
   easing: "cubic-bezier(.03,.98,.52,.99)",
 };
 
-const About = () => {
+const AboutComponent = () => {
   return (
     <>
       <motion.section
@@ -58,4 +51,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutComponent;

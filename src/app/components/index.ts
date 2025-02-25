@@ -1,20 +1,26 @@
 import { EarthCanvas, BallCanvas, SphereCanvas, StarsCanvas } from "./canvas";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
-import About from "./About";
+import AboutComponent from "./AboutComponent";
 import Tech from "./Tech";
-import Works from "./Works";
-import Contact from "./Contact";
+import WorksComponent from "./WorksComponent";
+import ContactComponent from "./ContactComponent";
+import PageTransition from "./PageTransition";
+import StairTransition from "./StairTransition";
+import NavigateComponent from "./NavigateComponent";
 
 export {
   Hero,
   Navbar,
-  About,
+  AboutComponent,
   Tech,
-  Works,
-  Contact,
+  WorksComponent,
+  ContactComponent,
   EarthCanvas,
   BallCanvas,
   StarsCanvas,
   SphereCanvas,
+  PageTransition,
+  StairTransition,
+  NavigateComponent,
 };

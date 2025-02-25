@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "./components";
-import PageTransition from "./components/PageTransition";
-import StairTransition from "./components/StairTransition";
+import { Navbar, PageTransition, StairTransition } from "./components";
+
 
 export const metadata: Metadata = {
   title: "Liliana | Portfolio",
