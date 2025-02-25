@@ -167,7 +167,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center ">
+      <div className="absolute xs:bottom-10 bottom-32 w-full flex xl:justify-center xl:items-center justify-end px-5">
         <a href="#about">
           <motion.div
             initial={{ opacity: 0 }}
