@@ -133,12 +133,13 @@ const Hero = () => {
                 cx="253"
                 cy="253"
                 r="210"
-                stroke="#FFFF33"
+                stroke="#00ff99"
                 strokeWidth="4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                initial={{ strokeDasharray: "24 10 0 0" }}
+                initial={{ strokeDasharray: "24 10 0 0", opacity: 0 }}
                 animate={{
+                  opacity: 1,
                   strokeDasharray: [
                     "15 120 25 25",
                     "16 25 92 72",
@@ -167,7 +168,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
-      <NavigateComponent id={'about'}/>
+      <NavigateComponent id={"about"} />
     </motion.section>
   );
 };

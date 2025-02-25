@@ -14,7 +14,7 @@ const SphereBg = () => {
     <mesh>
       <Sphere args={[1, 100, 200]} scale={2.5}>
         <MeshDistortMaterial
-          color="#9B00FF"
+          color="#bb8ed0"
           attach="material"
           distort={0.5}
           speed={2}

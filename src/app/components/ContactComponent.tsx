@@ -38,7 +38,7 @@ const ContactComponent = () => {
               className="mtt-12 flex flex-col gap-8"
             >
               <label htmlFor="name" className="flex flex-col">
-                <span className="text-white font-medium mb-4">Your Name</span>
+                <span className="text-white font-medium mb-4 font-preahvihear">Your Name</span>
                 <input
                   type="text"
                   name="name"
@@ -46,12 +46,12 @@ const ContactComponent = () => {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="What's your name?"
-                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium font-preahvihear"
                 />
               </label>
 
               <label htmlFor="email" className="flex flex-col">
-                <span className="text-white font-medium mb-4">Your Email</span>
+                <span className="text-white font-medium mb-4 font-preahvihear">Your Email</span>
                 <input
                   type="email"
                   name="email"
@@ -59,12 +59,12 @@ const ContactComponent = () => {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="What's your email?"
-                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium font-preahvihear"
                 />
               </label>
 
               <label htmlFor="message" className="flex flex-col">
-                <span className="text-white font-medium mb-4">
+                <span className="text-white font-medium mb-4 font-preahvihear">
                   Your Message
                 </span>
                 <textarea
@@ -74,13 +74,13 @@ const ContactComponent = () => {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="What do you want to say?"
-                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium font-preahvihear"
                 />
               </label>
 
               <button
                 type="submit"
-                className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md  shadow-primary rounded-xl"
+                className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md  shadow-primary rounded-xl font-shadowsIntoLight text-xl"
               >
                 {loading ? "sending..." : "Send"}
               </button>

@@ -14,6 +14,7 @@ interface IProjectCard {
   tags: { name: string; color: string }[];
   image: string;
   link: string;
+  url: string;
 }
 const ProjectCard = ({
   index,
@@ -22,10 +23,14 @@ const ProjectCard = ({
   tags,
   image,
   link,
+  url,
 }: IProjectCard) => {
   return (
     <>
-      <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+      <motion.div
+        variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+        onClick={() => window.open(url, "_blank")}
+      >
         <Tilt
           options={{
             max: 45,
@@ -58,8 +63,12 @@ const ProjectCard = ({
           </div>
 
           <div className="mt-5">
-            <h3 className="text-white font-bold text-[24px]">{name}</h3>
-            <p className="mt-2 text-secondary text-[14px]">{description}</p>
+            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-[#94ccb4] via-[#d05de2] to-[#f0aa63] font-bold text-[30px] font-moonDance">
+              {name}
+            </h3>
+            <p className="mt-2 text-secondary text-[14px] text-justify font-preahvihear">
+              {description}
+            </p>
           </div>
 
           <div className="mt-4 flex flex-wrap gap-2">
@@ -98,7 +107,7 @@ const WorksComponent = () => {
         <div className="w-full flex">
           <motion.p
             variants={fadeIn("", "", 0.1, 1)}
-            className="mt-3 text-secondary text-[1.2rem] leading-[30px] text-justify"
+            className="mt-3 text-secondary text-[1.2rem] leading-[30px] text-justify font-preahvihear"
           >
             Following projects showcases my skills and experience through
             real-world examples of my work. Each project is briefly described
@@ -112,25 +121,6 @@ const WorksComponent = () => {
             return <ProjectCard key={index} index={index} {...project} />;
           })}
         </div>
-        <div className="absolute xs:bottom-10 bottom-32 w-full flex xl:justify-center xl:items-center justify-end px-5">
-        <a href="#work">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 1 } }}
-            className="w-[35px] h-[64px] rounded-full border-4 border-secondary justify-center items-start p-2 hidden md:flex"
-          >
-            <motion.div
-              animate={{ y: [0, 24, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
-            />
-          </motion.div>
-        </a>
-      </div>
       </motion.section>
     </>
   );

@@ -13,8 +13,6 @@ export const navLinks = [
   },
 ];
 
-
-
 const socialMediaIcons = [
   {
     title: "LinkedIn",
@@ -22,7 +20,7 @@ const socialMediaIcons = [
     color: "#0072b1",
     size: 35,
     url: "https://www.linkedin.com/in/liliana-forero-2b6099348/",
-    className: 'rounded-xl hover:shadow-linkedin'
+    className: "rounded-xl hover:shadow-linkedin",
   },
   {
     title: "GitHub",
@@ -30,8 +28,8 @@ const socialMediaIcons = [
     color: "white",
     size: 35,
     url: "https://github.com/LilyFoNo",
-    className: 'ounded-full hover:shadow-gitHub',
-  }
+    className: "ounded-full hover:shadow-gitHub",
+  },
 ];
 
 const technologies = [
@@ -87,9 +85,31 @@ const technologies = [
 
 const projects = [
   {
-    name: "Project 1",
+    name: "Alpha Bites",
     description:
-      "Web-based platform that allows users to search for...",
+      "eCommerce platform built with Next.js 15, Clerk for authentication, and Contentful CMS for content management. It allows users to browse featured items publicly and grants access to the full catalog once authenticated. The platform demonstrates integration of user authentication, CMS, and protected routes, providing a smooth and secure user experience with a visually appealing interface.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "nextjs",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: "/assets/projects/AlphaBites.png",
+    link: "https://github.com/LilyFoNo/Alpha_Bites",
+    url: "https://alpha-bites.vercel.app/",
+  },
+  {
+    name: "Cook Up Magic",
+    description:
+      "It is a React.js + Node.js web app that allows you to store your recipes and ingredients that you have in a fridge. Recipes can be filtered by ingredients, cuisine, diet, intolerance, and more",
     tags: [
       {
         name: "react",
@@ -104,50 +124,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/assets/herobg.png",
+    image: "/assets/projects/CookUpMagic.png",
     link: "https://github.com/",
-  },
-  {
-    name: "Project 2",
-    description:
-      "Web application that enables users to search for...",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: "/assets/herobg.png",
-    link: "https://github.com/",
-  },
-  {
-    name: "Project 3",
-    description:
-      "A comprehensive platform that allows users to...",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: "/assets/herobg.png",
-    link: "https://github.com/",
+    url: "",
   },
 ];
 
