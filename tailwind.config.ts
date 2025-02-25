@@ -25,6 +25,8 @@ export default {
       },
       fontFamily: {
         preahvihear: ["Preahvihear", "sans-serif"],
+        moonDance: ["MoonDance", "sans-serif"],
+        shadowsIntoLight: ["ShadowsIntoLight", "sans-serif"],
       },
     },
   },

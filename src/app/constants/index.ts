@@ -13,23 +13,25 @@ export const navLinks = [
   },
 ];
 
-const services = [
+
+
+const socialMediaIcons = [
   {
-    title: "Web Developer",
-    icon: "/assets/web.png",
+    title: "LinkedIn",
+    icon: "FaLinkedinIn",
+    color: "#0072b1",
+    size: 35,
+    url: "https://www.linkedin.com/in/liliana-forero-2b6099348/",
+    className: 'rounded-xl hover:shadow-linkedin'
   },
   {
-    title: "React Developer",
-    icon: "/assets/mobile.png",
-  },
-  {
-    title: "Next Js Developer",
-    icon: "/assets/backend.png",
-  },
-  {
-    title: "Backend Developer",
-    icon: "/assets/creator.png",
-  },
+    title: "GitHub",
+    icon: "IoLogoGithub",
+    color: "white",
+    size: 35,
+    url: "https://github.com/LilyFoNo",
+    className: 'ounded-full hover:shadow-gitHub',
+  }
 ];
 
 const technologies = [
@@ -149,4 +151,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, projects };
+export { socialMediaIcons, technologies, projects };
