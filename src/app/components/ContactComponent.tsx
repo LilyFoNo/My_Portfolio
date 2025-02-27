@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, FormEvent } from "react";
 import { motion } from "framer-motion";
 // import emailjs from '@emailjs/browser'
 import { staggerContainer } from "../utils/motion";
@@ -12,8 +12,39 @@ const ContactComponent = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = () => {};
-  const handleSubmit = () => {};
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { target } = event;
+    const { name, value } = target;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setLoading(true);
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "68823846-8498-410f-80ef-fb47ea86cb42",
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      }),
+    });
+    const result = await response.json();
+    if (result.success) {
+      setLoading(false);
+      setForm({ name: "", email: "", message: "" });
+    }
+  }
   return (
     <>
       <motion.section
@@ -38,7 +69,9 @@ const ContactComponent = () => {
               className="mtt-12 flex flex-col gap-8"
             >
               <label htmlFor="name" className="flex flex-col">
-                <span className="text-white font-medium mb-4 font-preahvihear">Your Name</span>
+                <span className="text-white font-medium mb-4 font-preahvihear">
+                  Your Name
+                </span>
                 <input
                   type="text"
                   name="name"
@@ -51,7 +84,9 @@ const ContactComponent = () => {
               </label>
 
               <label htmlFor="email" className="flex flex-col">
-                <span className="text-white font-medium mb-4 font-preahvihear">Your Email</span>
+                <span className="text-white font-medium mb-4 font-preahvihear">
+                  Your Email
+                </span>
                 <input
                   type="email"
                   name="email"

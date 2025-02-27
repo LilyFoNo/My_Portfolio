@@ -105,7 +105,7 @@ const Hero = () => {
           </div>
         </div> */}
         <div className="order-1 md:order-none xl:w-[50rem] xl:h-[40rem] lg:w-[25rem] lg:h-[25rem] w-[15rem] h-[15rem] relative">
-          <div className="img absolute xl:left-[17rem] xl:top-[13rem] left-[1.8rem] top-0 z-10 lg:left-[7rem] lg:top-[7rem]">
+          <div className="img absolute xl:left-[15rem] xl:top-[13rem] left-[1.8rem] top-0 z-10 lg:left-[7rem] lg:top-[7rem]">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{
@@ -115,7 +115,7 @@ const Hero = () => {
               className="relative rounded-full flex items-center justify-center w-[10rem] h-[10rem] xl:w-[15.7rem] xl:h-[15.7rem]"
             >
               <Image
-                src={"/profile.jpeg"}
+                src={"/profile.png"}
                 alt="profile picture"
                 fill
                 quality={100}
@@ -133,7 +133,7 @@ const Hero = () => {
                 cx="253"
                 cy="253"
                 r="210"
-                stroke="#00ff99"
+                stroke="#5f4c66"
                 strokeWidth="4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
