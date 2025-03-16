@@ -30,6 +30,7 @@ const ProjectCard = ({
       <motion.div
         variants={fadeIn("up", "spring", index * 0.5, 0.75)}
         onClick={() => window.open(url, "_blank")}
+        id="work"
       >
         <Tilt
           options={{

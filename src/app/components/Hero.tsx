@@ -2,7 +2,6 @@
 
 import { styles } from "../styles";
 import { SphereCanvas } from "./canvas";
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
@@ -10,18 +9,25 @@ import Image from "next/image";
 import { staggerContainer } from "../utils/motion";
 import { socialMediaIcons } from "../constants";
 import Link from "next/link";
-import NavigateComponent from "./NavigateComponent";
-
-const Scene = dynamic(() => import("./Robot/Scene"), { ssr: false });
+import { Spotlight } from "./ui/Spotlight";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
-    <motion.section
-      variants={staggerContainer()}
-      initial="hidden"
-      whileInView="show"
-      className="relative w-full h-screen mx-auto"
+    <section
+      className="relative w-full h-screen mx-auto overflow-x-hidden"
     >
+      <div>
+        <Spotlight
+          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          fill="white"
+        />
+        <Spotlight
+          className="top-20 left-full h-[80vh] w-[50vw]"
+          fill="purple"
+        />
+        <Spotlight className="top-28 left-8 h-[80vh] w-[50vw" fill="#bd98c8" />
+      </div>
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between items-center gap-5`}
       >
@@ -50,22 +56,12 @@ const Hero = () => {
                 Liliana
               </span>
             </motion.h1>
-            <motion.p
-              initial={{ x: -100, opacity: 0 }}
-              animate={{
-                x: 0,
-                opacity: 1,
-                transition: { duration: 1, staggerChildren: 0 },
-              }}
+            <TextGenerateEffect
               className={`${styles.heroSubText} mt-2 text-white-100 font-shadowsIntoLight text-center`}
-            >
-              I'm a&nbsp;
-              <span className="text-[#a078f7]">full-stack developer</span>
-              &nbsp;specializing in dynamic web applications. Currently, I'm
-              expanding my expertise in&nbsp;
-              <span className="text-[#a078f7]">3D develpment</span>&nbsp;to
-              create immersive user experiences.
-            </motion.p>
+              words="I'm a full-stack developer specializing in dynamic web applications. Currently, I'm
+              expanding my expertise in 3D develpment to
+              create immersive user experiences."
+            />
             <div className="flex gap-10 w-[50%]">
               {socialMediaIcons.map((icon) => {
                 const img =
@@ -98,12 +94,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
-        {/* <div className="relative w-[50%]">
-          <div className="w-full h-screen fixed -right-[40rem] -top-20">
-            <Scene />
-          </div>
-        </div> */}
         <div className="order-1 md:order-none xl:w-[50rem] xl:h-[40rem] lg:w-[25rem] lg:h-[25rem] w-[15rem] h-[15rem] relative">
           <div className="img absolute xl:left-[15rem] xl:top-[13rem] left-[1.8rem] top-0 z-10 lg:left-[7rem] lg:top-[7rem]">
             <motion.div
@@ -168,8 +158,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
-      <NavigateComponent id={"about"} />
-    </motion.section>
+    </section>
   );
 };
 

@@ -6,24 +6,56 @@ import Link from "next/link";
 import Image from "next/image";
 import { TbMenu4 } from "react-icons/tb";
 import { IoMdClose } from "react-icons/io";
-import { usePathname } from "next/navigation";
 
-const Navbar = () => {
-  const [active, setActive] = useState("");
-  const [toggel, setToggle] = useState(false);
-  const pathname = usePathname();
+const Navbar = ({ sections }: { sections: string[] }) => {
+  const [activeSection, setActiveSection] = useState("");
+  const [toggle, setToggle] = useState(false);
+
+  const handleSectionClick = (sectionId: string) => {
+    setActiveSection(sectionId);
+    const section = document.getElementById(sectionId);
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          } else {
+            if (activeSection === entry.target.id) {
+              setActiveSection("");
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    sections.forEach((sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [sections, activeSection]);
 
   return (
     <>
-      <div className={`fixed w-full bg-primary z-20 top-0 `}>
+      <div className={`fixed w-full bg-primary z-20 top-0`}>
         <nav className={`${styles.paddingX} flex items-center py-2`}>
-          <div className="w-full flex justify-between items-center max-w-7xl mx-auto  ">
+          <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
             <Link
               href="/"
               className="flex items-center gap-2"
               scroll={false}
               onClick={() => {
-                setActive("");
+                setActiveSection("");
                 window.scrollTo(0, 0);
               }}
             >
@@ -47,11 +79,11 @@ const Navbar = () => {
                   <li
                     key={index}
                     className={`${
-                      pathname === link.path
+                      activeSection === link.id
                         ? "text-transparent bg-clip-text bg-gradient-to-r from-[#94ccb4] via-[#d05de2] to-[#f0aa63]"
                         : "text-secondary"
                     } hover:text-white text-[18px] font-medium cursor-pointer hover:border-b hover:border-[#7e00ff] hover:rounded-[10px]`}
-                    onClick={() => setActive(link.title)}
+                    onClick={() => handleSectionClick(link.path)}
                   >
                     <Link href={link.path} className=" font-preahvihear px-1">
                       {link.title}
@@ -61,22 +93,22 @@ const Navbar = () => {
               })}
             </ul>
             <div className="sm:hidden flex felx-1 justify-end items-center">
-              {toggel ? (
+              {toggle ? (
                 <IoMdClose
                   size={30}
                   className="cursor-pointer hover:text-purple-700"
-                  onClick={() => setToggle(!toggel)}
+                  onClick={() => setToggle(!toggle)}
                 />
               ) : (
                 <TbMenu4
                   size={30}
                   className="cursor-pointer hover:text-purple-700"
-                  onClick={() => setToggle(!toggel)}
+                  onClick={() => setToggle(!toggle)}
                 />
               )}
               <div
                 className={`${
-                  !toggel ? "hidden" : "flex"
+                  !toggle ? "hidden" : "flex"
                 } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
               >
                 <ul className="list-none flex justify-end items-start flex-col gap-4">
@@ -85,13 +117,13 @@ const Navbar = () => {
                       <li
                         key={index}
                         className={`${
-                          active === link.title
+                          activeSection === link.path
                             ? "text-white"
                             : "text-secondary"
                         } font-poppins font-medium cursor-pointer text-[16px]`}
                         onClick={() => {
-                          setToggle(!toggel);
-                          setActive(link.title);
+                          setToggle(!toggle);
+                          setActiveSection(link.path);
                         }}
                       >
                         <Link href={link.path}>{link.title}</Link>

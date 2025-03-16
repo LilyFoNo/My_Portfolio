@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
+        <Navbar sections={['about','work','contact']}/>
         <StairTransition />
         <PageTransition>{children}</PageTransition>
       </body>
