@@ -6,6 +6,7 @@ import { ScrollArea } from "./ui/scroll-area";
 import { motion } from "motion/react";
 import { about, education } from "../constants";
 import Tech from "./Tech";
+import { styles } from "../styles";
 
 const Resume = () => {
   return (
@@ -32,7 +33,7 @@ const Resume = () => {
             <div className="min-h-[70vh] w-full">
               <TabsContent value="education" className="w-full">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold font-preahvihear">
+                  <h3 className={`${styles.sectionHeadText}`}>
                     {education.title}
                   </h3>
                   <ScrollArea className="h-[400px]">
@@ -43,7 +44,7 @@ const Resume = () => {
                             key={index}
                             className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                           >
-                            <span className="text-purple-500 font-preahvihear">
+                            <span className="text-[#b993c5] font-preahvihear">
                               {item.duration}
                             </span>
                             <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -64,7 +65,7 @@ const Resume = () => {
               </TabsContent>
               <TabsContent value="skills" className="w-full h-full">
                 <div className="flex flex-col gap-[40px]">
-                  <h3 className="text-4xl font-bold font-preahvihear">
+                  <h3 className={`${styles.sectionHeadText}`}>
                     My Skills
                   </h3>
                   <ScrollArea className="h-[350px]">
@@ -77,7 +78,7 @@ const Resume = () => {
                 className="w-full text-center xl:text-left"
               >
                 <div className="flex flex-col gap-[30px]">
-                  <h3 className="text-4xl font-bold font-preahvihear">
+                  <h3 className={`${styles.sectionHeadText}`}>
                     {about.title}
                   </h3>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 font-preahvihear text-justify">

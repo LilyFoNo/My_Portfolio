@@ -88,46 +88,56 @@ const technologies = [
 
 const projects = [
   {
+    num: "01",
     name: "Alpha Bites",
+    category: "Full-Stack Project",
     description:
       "eCommerce platform built with Next.js 15, Clerk for authentication, and Contentful CMS for content management. It allows users to browse featured items publicly and grants access to the full catalog once authenticated. The platform demonstrates integration of user authentication, CMS, and protected routes, providing a smooth and secure user experience with a visually appealing interface.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "MongoDB",
         color: "green-text-gradient",
       },
       {
-        name: "nextjs",
+        name: "Next.js",
         color: "pink-text-gradient",
+      },
+      {
+        name: "Tailwind.css",
+        color: "sunset-orange-text-gradient",
       },
     ],
     image: "/assets/projects/AlphaBites.png",
+    image_mobile: "/assets/projects/AlphaBites_mobile.png",
     link: "https://github.com/LilyFoNo/Alpha_Bites",
     url: "https://alpha-bites.vercel.app/",
   },
   {
+    num: "02",
     name: "Cook Up Magic",
+    category: "Full-Stack Project",
     description:
-      "It is a React.js + Node.js web app that allows you to store your recipes and ingredients that you have in a fridge. Recipes can be filtered by ingredients, cuisine, diet, intolerance, and more",
+      "It is a React.js + Node.js web app that allows you to store your recipes and ingredients that you have in a fridge. Recipes can be filtered by ingredients, cuisine, diet, intolerance, and more.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "MongoDB",
         color: "green-text-gradient",
       },
       {
-        name: "nodejs",
+        name: "Node.js",
         color: "pink-text-gradient",
       },
     ],
     image: "/assets/projects/CookUpMagic.png",
+    image_mobile: "/assets/projects/CookUpMagic.png",
     link: "https://github.com/",
     url: "",
   },

@@ -101,6 +101,21 @@ hr {
   -webkit-text-fill-color: transparent;
 }
 
+.sunset-orange-text-gradient {
+  background: #ff5e62;
+  background: -webkit-linear-gradient(to top, #ff5e62, #ff9966);
+  background: linear-gradient(to top, #ff5e62, #ff9966);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px #ffffff;
+}
+.text-outline-hover {
+  -webkit-text-stroke: 1px #915eff;
+}
+
 /* canvas- styles */
 .canvas-loader {
   font-size: 10px;
