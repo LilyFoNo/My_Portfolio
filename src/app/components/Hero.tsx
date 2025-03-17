@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
 import Image from "next/image";
-import { staggerContainer } from "../utils/motion";
 import { socialMediaIcons } from "../constants";
 import Link from "next/link";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import { BackgroundBeams } from "./ui/background-lines";
 
 const Hero = () => {
   return (
@@ -158,6 +158,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+      <BackgroundBeams/>
     </section>
   );
 };

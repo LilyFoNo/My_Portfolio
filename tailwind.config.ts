@@ -50,9 +50,6 @@ export default {
       screens: {
         xs: "450px",
       },
-      backgroundImage: {
-        "hero-pattern": "url('/assets/herobg.png')",
-      },
       fontFamily: {
         preahvihear: ["Preahvihear", "sans-serif"],
         moonDance: ["MoonDance", "sans-serif"],
