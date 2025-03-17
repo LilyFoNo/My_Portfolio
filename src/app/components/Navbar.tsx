@@ -44,7 +44,7 @@ const Navbar = ({ sections }: { sections: string[] }) => {
 
     return () => observer.disconnect();
   }, [sections, activeSection]);
-
+  
   return (
     <>
       <div className={`fixed w-full bg-primary z-20 top-0`}>

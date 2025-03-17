@@ -1,17 +1,17 @@
 export const navLinks = [
   {
     path: "#about",
-    id:"about",
+    id: "about",
     title: "About",
   },
   {
     path: "#work",
-    id:"work",
+    id: "work",
     title: "Work",
   },
   {
     path: "#contact",
-    id:"contact",
+    id: "contact",
     title: "Contact",
   },
 ];
@@ -133,4 +133,67 @@ const projects = [
   },
 ];
 
-export { socialMediaIcons, technologies, projects };
+const about = {
+  title: "About Me",
+  description: `I'm a skilled software developer with experience in TypeScript and JavaScript, specializing in frameworks like React, Node.js, and Next.js. As a quick learner, I thrive in collaborative environments, working closely with teams to create efficient, scalable, and user-friendly solutions that address real-world challenges.`,
+  info: [
+    {
+      fieldName: "Name",
+      fieldValue: "Liliana Forero",
+    },
+    {
+      fieldName: "Phone",
+      fieldValue: "(778) 903 8374",
+    },
+    {
+      fieldName: "Nationality",
+      fieldValue: "Colombian",
+    },
+    {
+      fieldName: "Email",
+      fieldValue: "lilianaforeronoguera@gmail.com",
+    },
+    {
+      fieldName: "Freelance",
+      fieldValue: "Available",
+    },
+    {
+      fieldName: "Languages",
+      fieldValue: "English, Spanish",
+    },
+  ],
+};
+
+const education = {
+  icon: "/assets/education.png",
+  title: "My Education",
+  items: [
+    {
+      institution: "wwwwwww",
+      degree: "ssssss",
+      duration: "33333",
+    },
+    {
+      institution: "wwwwwww",
+      degree: "ssssss",
+      duration: "33333",
+    },
+    {
+      institution: "wwwwwww",
+      degree: "ssssss",
+      duration: "33333",
+    },
+    {
+      institution: "wwwwwww",
+      degree: "ssssss",
+      duration: "33333",
+    },
+    {
+      institution: "wwwwwww",
+      degree: "ssssss",
+      duration: "33333",
+    },
+  ],
+};
+
+export { socialMediaIcons, technologies, projects, about, education };

@@ -1,9 +1,14 @@
-"use client"
+"use client";
 import { staggerContainer } from "../utils/motion";
-import { styles } from "../styles";
 import { motion } from "motion/react";
 import { BallCanvas } from "./canvas";
 import { technologies } from "../constants";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
 
 const Tech = () => {
   return (
@@ -13,18 +18,27 @@ const Tech = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
-        className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+        className={`max-w-7xl mx-auto relative z-0`}
         id="tech"
       >
-        <div className="flex flex-row flex-wrap justify-center gap-10">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
           {technologies.map((technology, index) => {
             return (
-              <div key={index} className="w-28 h-28"> 
-              <BallCanvas icon={{ imgUrl: technology.icon }}/>
-               </div>
-            )
+              <li key={index} className="w-28 h-28">
+                <TooltipProvider delayDuration={100}>
+                  <Tooltip>
+                    <TooltipTrigger className="w-28 h-28">
+                      <BallCanvas icon={{ imgUrl: technology.icon }} />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{technology.name}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </li>
+            );
           })}
-        </div>
+        </ul>
       </motion.section>
     </>
   );
