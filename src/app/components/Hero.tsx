@@ -29,7 +29,7 @@ const Hero = () => {
         <Spotlight className="top-28 left-8 h-[80vh] w-[50vw" fill="#bd98c8" />
       </div>
       <div
-        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between items-center gap-5`}
+        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between items-center gap-5 z-10`}
       >
         <div className="order-2 md:order-none flex gap-5 md:w-[50%] w-full">
           <div className="flex flex-col justify-center items-center mt-5">

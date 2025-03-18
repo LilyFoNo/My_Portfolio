@@ -17,14 +17,14 @@ export const navLinks = [
 ];
 
 const socialMediaIcons = [
-  {
-    title: "LinkedIn",
-    icon: "FaLinkedinIn",
-    color: "#0072b1",
-    size: 35,
-    url: "https://www.linkedin.com/in/liliana-forero-2b6099348/",
-    className: "rounded-xl hover:shadow-linkedin",
-  },
+  // {
+  //   title: "LinkedIn",
+  //   icon: "FaLinkedinIn",
+  //   color: "#0072b1",
+  //   size: 35,
+  //   url: "https://www.linkedin.com/in/liliana-forero-2b6099348/",
+  //   className: "rounded-xl hover:shadow-linkedin",
+  // },
   {
     title: "GitHub",
     icon: "IoLogoGithub",
@@ -179,29 +179,24 @@ const education = {
   title: "My Education",
   items: [
     {
-      institution: "wwwwwww",
-      degree: "ssssss",
-      duration: "33333",
+      institution: "Cornerstone International Community College of Canada",
+      degree: "Web Development Specialist Diploma",
+      duration: "April 2024 - Present",
     },
     {
-      institution: "wwwwwww",
-      degree: "ssssss",
-      duration: "33333",
+      institution: "Platzi",
+      degree: "Typescript Course",
+      duration: "2024",
     },
     {
-      institution: "wwwwwww",
-      degree: "ssssss",
-      duration: "33333",
+      institution: "ICIP | Instituto Científico del Pacífico",
+      degree: "MATLAB Course",
+      duration: "2023",
     },
     {
-      institution: "wwwwwww",
-      degree: "ssssss",
-      duration: "33333",
-    },
-    {
-      institution: "wwwwwww",
-      degree: "ssssss",
-      duration: "33333",
+      institution: "ICIP | Instituto Científico del Pacífico",
+      degree: "Advanced Excel Course",
+      duration: "2023",
     },
   ],
 };

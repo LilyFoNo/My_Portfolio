@@ -56,7 +56,8 @@ const BallCanvas = ({ icon }: { icon: { imgUrl: string } }) => {
         onPointerUp={handlePointerUp}
         className={`${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
       >
-        <Suspense fallback={<CanvasLoader />}>
+        {/* <Suspense fallback={<CanvasLoader />}> */}
+        <Suspense>
           <OrbitControls enableZoom={false} />
           <ambientLight intensity={0.5} />
           <Ball icon={{ imgUrl: icon.imgUrl }} />

@@ -21,13 +21,13 @@ const Resume = () => {
       >
         <div className="container mx-auto">
           <Tabs
-            defaultValue="education"
+            defaultValue="about"
             className="flex flex-col xl:flex-row gap-[60px]"
           >
             <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-5 font-shadowsIntoLight">
-              <TabsTrigger value={"education"}>Education</TabsTrigger>
-              <TabsTrigger value={"skills"}>Skills</TabsTrigger>
               <TabsTrigger value={"about"}>About Me</TabsTrigger>
+              <TabsTrigger value={"skills"}>Skills</TabsTrigger>
+              <TabsTrigger value={"education"}>Education</TabsTrigger>
             </TabsList>
 
             <div className="min-h-[70vh] w-full">
