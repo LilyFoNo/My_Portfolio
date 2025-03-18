@@ -5,8 +5,8 @@ import AboutComponent from "./About";
 import Tech from "./Tech";
 import WorksComponent from "./Work";
 import ContactComponent from "./Contact";
-import PageTransition from "./PageTransition";
 import StairTransition from "./StairTransition";
+import ProgressBar from "./ProgressBar";
 
 export {
   Hero,
@@ -19,6 +19,6 @@ export {
   BallCanvas,
   StarsCanvas,
   SphereCanvas,
-  PageTransition,
-  StairTransition
+  StairTransition,
+  ProgressBar
 };

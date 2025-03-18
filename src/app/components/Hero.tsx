@@ -11,11 +11,13 @@ import Link from "next/link";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { BackgroundBeams } from "./ui/background-lines";
+import ProgressBar from "./ProgressBar";
 
 const Hero = () => {
   return (
     <section
       className="relative w-full h-screen mx-auto overflow-x-hidden"
+      id="hero"
     >
       <div>
         <Spotlight
@@ -158,7 +160,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
-      <BackgroundBeams/>
+      <BackgroundBeams />
     </section>
   );
 };

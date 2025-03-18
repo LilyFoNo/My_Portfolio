@@ -56,6 +56,9 @@ export default {
         shadowsIntoLight: ["ShadowsIntoLight", "sans-serif"],
         indieFlower: ["IndieFlower", "sans-serif"],
       },
+      willChange: {
+        'clip-path': 'will-change: clip-path',
+      }
     },
   },
   plugins: [
