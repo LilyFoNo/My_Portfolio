@@ -55,7 +55,7 @@ const ContactComponent = () => {
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
         id="contact"
       >
-        <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+        <div className="lg:mt-12 lg:flex-row flex-col-reverse flex gap-10 overflow-hidden">
           <motion.div
             variants={slideIn("left", "tween", 0.2, 1)}
             className="flex-[0.75] gb-black-100 p-8 rounded-2xl"
@@ -124,7 +124,7 @@ const ContactComponent = () => {
 
           <motion.div
             variants={slideIn("right", "tween", 0.2, 1)}
-            className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+            className="lg:flex lg:flex-1 xl:h-auto hidden"
           >
             <EarthCanvas />
           </motion.div>

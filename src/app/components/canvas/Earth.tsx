@@ -16,8 +16,8 @@ const Earth = () => {
       <mesh>
         <primitive
           object={earth.scene}
-          scale={2.5}
-          position-y={0}
+          scale={2}
+          position-y={1.5}
           rotation-y={0}
         />
       </mesh>
