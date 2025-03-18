@@ -1,11 +1,11 @@
 "use client";
 import { useState, useRef, FormEvent } from "react";
 import { motion } from "framer-motion";
-// import emailjs from '@emailjs/browser'
 import { staggerContainer } from "../utils/motion";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { slideIn } from "../utils/motion";
+import { ToastContainer, toast } from "react-toastify";
 
 const ContactComponent = () => {
   const formRef = useRef(null);
@@ -43,6 +43,17 @@ const ContactComponent = () => {
     if (result.success) {
       setLoading(false);
       setForm({ name: "", email: "", message: "" });
+      toast("Thank you for reaching out!", {
+        position: "bottom-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        className:
+          "text-[#bd97c8] font-indieFlower font-bold p-10 rounded-lg shadow-lg h-[2rem] bg-[#23153a] text-xl",
+      });
     }
   }
   return (
@@ -95,6 +106,7 @@ const ContactComponent = () => {
                   onChange={handleChange}
                   placeholder="What's your email?"
                   className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium font-preahvihear"
+                  required
                 />
               </label>
 
@@ -110,6 +122,7 @@ const ContactComponent = () => {
                   onChange={handleChange}
                   placeholder="What do you want to say?"
                   className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium font-preahvihear"
+                  required
                 />
               </label>
 
@@ -120,6 +133,7 @@ const ContactComponent = () => {
                 {loading ? "sending..." : "Send"}
               </button>
             </form>
+            <ToastContainer />
           </motion.div>
 
           <motion.div

@@ -152,10 +152,6 @@ const about = {
       fieldValue: "Liliana Forero",
     },
     {
-      fieldName: "Phone",
-      fieldValue: "(778) 903 8374",
-    },
-    {
       fieldName: "Nationality",
       fieldValue: "Colombian",
     },
