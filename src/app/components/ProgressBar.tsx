@@ -74,12 +74,12 @@ const ProgressBar = ({ onIsLoading }: { onIsLoading: () => void }) => {
         id="container"
       >
         <div
-          className="absolute top-[50%] left-0 -translate-y-[50%] w-[25vw] p-[2em] flex justify-between items-center text-yellow-600"
+          className="absolute top-[50%] left-0 -translate-y-[50%] w-[25vw] p-[2em] flex justify-between items-center text-purple-600"
           id="progressBar"
         >
-          <p className="">loading</p>
-          <p>
-            <span id="counter">0</span>
+          <p className="font-moonDance text-5xl">loading</p>
+          <p className="font-moonDance text-4xl">
+            <span id="counter">0</span> %
           </p>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <Navbar sections={["about", "work", "contact"]} />
-      <div className="relative z-0 bg-primary">
+      <div className="relative z-0 bg-primary select-none">
         <div className=" bg-cover bg-no-repeat bg-center">
           <Hero />
         </div>
