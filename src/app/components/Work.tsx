@@ -19,11 +19,20 @@ import "swiper/css";
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
-  const handleSlideChange = (swiper: { activeIndex: number }) => {
+  const handleSlideChange = (swiper: {
+    activeIndex: number;
+    isBeginning: boolean | ((prevState: boolean) => boolean);
+    isEnd: boolean | ((prevState: boolean) => boolean);
+  }) => {
     const currentIndex = swiper.activeIndex;
     setProject(projects[currentIndex]);
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
   };
+
   return (
     <>
       <motion.section
@@ -134,9 +143,11 @@ const Work = () => {
                   );
                 })}
                 <WorkSliderBtns
-                  containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                  btnStyles="bg-[#bc96c7] hover:bg-[#a281ac] text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all "
+                  containerStyles={`flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none`}
+                  btnStyles={`text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all`}
                   iconStyles=""
+                  isBeginning={isBeginning}
+                  isEnd={isEnd}
                 />
               </Swiper>
             </div>

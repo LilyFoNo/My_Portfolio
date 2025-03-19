@@ -7,28 +7,43 @@ interface IWorkSliderBtns {
   containerStyles: string;
   btnStyles: string;
   iconStyles: string;
+  isBeginning: boolean;
+  isEnd: boolean;
 }
 
 const WorkSliderBtns = ({
   containerStyles,
   btnStyles,
   iconStyles,
+  isBeginning,
+  isEnd,
 }: IWorkSliderBtns) => {
   const swiper = useSwiper();
+  console.log(isBeginning);
   return (
     <>
       <div className={containerStyles}>
-        <button className={btnStyles}>
-          <PiCaretLeftBold
-            className={iconStyles}
-            onClick={() => swiper.slidePrev()}
-          />
+        <button
+          className={`${btnStyles} ${
+            isBeginning
+              ? "bg-[#a281ac]"
+              : "bg-[#cda3d8] hover:bg-[#ab81ca] hover:text-white"
+          }`}
+          disabled={isBeginning}
+          onClick={() => swiper.slidePrev()}
+        >
+          <PiCaretLeftBold className={`${iconStyles}`} />
         </button>
-        <button className={btnStyles}>
-          <PiCaretRightBold
-            className={iconStyles}
-            onClick={() => swiper.slideNext()}
-          />
+        <button
+          className={`${btnStyles}  ${
+            isEnd
+              ? "bg-[#a281ac]"
+              : "bg-[#cda3d8] hover:bg-[#ab81ca] hover:text-white"
+          }`}
+          disabled={isEnd}
+          onClick={() => swiper.slideNext()}
+        >
+          <PiCaretRightBold className={`${iconStyles}`} />
         </button>
       </div>
     </>
