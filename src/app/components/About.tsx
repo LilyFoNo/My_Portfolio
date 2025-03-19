@@ -5,18 +5,17 @@ import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 import { staggerContainer } from "../utils/motion";
 import Resume from "./Resume";
-import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import { StarsBackground } from "./ui/stars-background";
 
 const AboutComponent = () => {
   return (
     <>
-      <BackgroundBeamsWithCollision>
         <motion.section
           variants={staggerContainer()}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className={` max-w-7xl mx-auto relative z-10 ${styles.padding}`}
+          className={` max-w-7xl mx-auto relative z-50 ${styles.padding}`}
           id="about"
         >
           <motion.div variants={textVariant(1)} className="mt-10">
@@ -25,7 +24,7 @@ const AboutComponent = () => {
           </motion.div>
           <Resume />
         </motion.section>
-      </BackgroundBeamsWithCollision>
+          <StarsBackground />
     </>
   );
 };

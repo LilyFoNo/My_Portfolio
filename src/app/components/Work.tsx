@@ -16,7 +16,6 @@ import { staggerContainer, textVariant } from "../utils/motion";
 import Image from "next/image";
 import WorkSliderBtns from "./ui/WorkSliderBtns";
 import "swiper/css";
-import { StarsBackground } from "./ui/stars-background";
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
@@ -41,7 +40,7 @@ const Work = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className={`min-h-[80vh] flex flex-col justify-center ${styles.padding}`}
+          className={`min-h-[80vh] flex flex-col justify-center ${styles.padding} z-50`}
           id="work"
         >
           <motion.div variants={textVariant(1)}>
@@ -157,8 +156,6 @@ const Work = () => {
               </div>
             </div>
           </div>
-
-          <StarsBackground />
         </motion.section>
     </>
   );

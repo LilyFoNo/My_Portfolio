@@ -1,6 +1,6 @@
 "use client";
 import "./globals.css";
-import { ProgressBar, StairTransition } from "./components";
+import { ProgressBar } from "./components";
 
 import { useState } from "react";
 
@@ -20,7 +20,6 @@ export default function RootLayout({
         <ProgressBar onIsLoading={handleIsLoading} />
         {!isLoading && (
           <div id="info">
-            <StairTransition />
             {children}
           </div>
         )}

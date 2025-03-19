@@ -5,7 +5,6 @@ import AboutComponent from "./About";
 import Tech from "./Tech";
 import WorksComponent from "./Work";
 import ContactComponent from "./Contact";
-import StairTransition from "./StairTransition";
 import ProgressBar from "./ProgressBar";
 
 export {
@@ -19,6 +18,5 @@ export {
   BallCanvas,
   StarsCanvas,
   SphereCanvas,
-  StairTransition,
   ProgressBar
 };
