@@ -19,7 +19,6 @@ const WorkSliderBtns = ({
   isEnd,
 }: IWorkSliderBtns) => {
   const swiper = useSwiper();
-  console.log(isBeginning);
   return (
     <>
       <div className={containerStyles}>

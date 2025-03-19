@@ -10,8 +10,7 @@ import { socialMediaIcons } from "../constants";
 import Link from "next/link";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import { BackgroundBeams } from "./ui/background-lines";
-import ProgressBar from "./ProgressBar";
+import { BackgroundBeams } from "./ui/background-beams";
 
 const Hero = () => {
   return (

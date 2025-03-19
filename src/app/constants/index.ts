@@ -137,8 +137,8 @@ const projects = [
       },
     ],
     image: "/assets/projects/CookUpMagic.png",
-    image_mobile: "/assets/projects/CookUpMagic.png",
-    link: "https://github.com/",
+    image_mobile: "/assets/projects/CookUpMagic_mobile.png",
+    link: "https://github.com/LilyFoNo/cookUpMagic",
     url: "",
   },
 ];
