@@ -65,7 +65,7 @@ const ProgressBar = ({ onIsLoading }: { onIsLoading: () => void }) => {
         });
       },
     });
-  }, [onIsLoading]);
+  }, []);
 
   return (
     <>
