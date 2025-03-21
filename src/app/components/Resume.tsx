@@ -33,7 +33,7 @@ const Resume = () => {
             <div className="min-h-[70vh] w-full">
               <TabsContent value="education" className="w-full">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className={`${styles.sectionHeadText}`}>
+                  <h3 className={`${styles.sectionHeadText} ${styles.textColor2}`}>
                     {education.title}
                   </h3>
                   <ScrollArea className="h-[400px]">
@@ -65,7 +65,7 @@ const Resume = () => {
               </TabsContent>
               <TabsContent value="skills" className="w-full h-full">
                 <div className="flex flex-col gap-[40px]">
-                  <h3 className={`${styles.sectionHeadText}`}>
+                  <h3 className={`${styles.sectionHeadText} ${styles.textColor}`}>
                     My Skills
                   </h3>
                   <ScrollArea className="h-[350px]">
@@ -78,7 +78,7 @@ const Resume = () => {
                 className="w-full text-center xl:text-left"
               >
                 <div className="flex flex-col gap-[30px]">
-                  <h3 className={`${styles.sectionHeadText}`}>
+                  <h3 className={`${styles.sectionHeadText} ${styles.textColor2}`}>
                     {about.title}
                   </h3>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 font-preahvihear text-justify">

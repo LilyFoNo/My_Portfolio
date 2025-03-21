@@ -44,7 +44,7 @@ const Navbar = ({ sections }: { sections: string[] }) => {
 
     return () => observer.disconnect();
   }, [sections, activeSection]);
-  
+
   return (
     <>
       <div className={`fixed w-full bg-primary z-20 top-0`}>
@@ -66,7 +66,9 @@ const Navbar = ({ sections }: { sections: string[] }) => {
                 height={200}
                 className="w-12 h-12 object-contain"
               />
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#94ccb4] via-[#d05de2] to-[#f0aa63] text-xl font-bold cursor-pointer flex font-preahvihear">
+              <p
+                className={`text-xl font-bold cursor-pointer flex font-preahvihear ${styles.textColor}`}
+              >
                 Liliana &nbsp;
                 <span className="sm:block hidden font-preahvihear">
                   | Web Development
@@ -80,7 +82,7 @@ const Navbar = ({ sections }: { sections: string[] }) => {
                     key={index}
                     className={`${
                       activeSection === link.id
-                        ? "text-transparent bg-clip-text bg-gradient-to-r from-[#94ccb4] via-[#d05de2] to-[#f0aa63]"
+                        ? `${styles.textColor}`
                         : "text-secondary"
                     } hover:text-white text-[18px] font-medium cursor-pointer hover:border-b hover:border-[#7e00ff] hover:rounded-[10px]`}
                     onClick={() => handleSectionClick(link.path)}

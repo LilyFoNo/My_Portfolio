@@ -20,7 +20,7 @@ const AboutComponent = () => {
         >
           <motion.div variants={textVariant(1)} className="mt-10">
             <p className={styles.sectionSubText}>Introduction</p>
-            <h2 className={styles.sectionHeadText}>Overview.</h2>
+            <h2 className={`${styles.sectionHeadText} ${styles.textColor}`}>Overview.</h2>
           </motion.div>
           <Resume />
         </motion.section>

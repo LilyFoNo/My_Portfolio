@@ -1,3 +1,16 @@
+import { FaHtml5 } from "react-icons/fa6";
+import { FaCss3Alt } from "react-icons/fa6";
+import { RiJavascriptFill } from "react-icons/ri";
+import { BiLogoTypescript } from "react-icons/bi";
+import { FaReact } from "react-icons/fa";
+import { TbBrandRedux } from "react-icons/tb";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { RiNodejsLine } from "react-icons/ri";
+import { SiMongodb } from "react-icons/si";
+import { TbBrandThreejs } from "react-icons/tb";
+import { RiNextjsFill } from "react-icons/ri";
+import { FaGitAlt } from "react-icons/fa";
+
 export const navLinks = [
   {
     path: "#about",
@@ -39,50 +52,62 @@ const technologies = [
   {
     name: "HTML 5",
     icon: "/assets/tech/html.png",
+    icon_mobile: FaHtml5,
   },
   {
     name: "CSS 3",
     icon: "/assets/tech/css.png",
+    icon_mobile: FaCss3Alt,
   },
   {
     name: "JavaScript",
     icon: "/assets/tech/javascript.png",
+    icon_mobile: RiJavascriptFill,
   },
   {
     name: "TypeScript",
     icon: "/assets/tech/typescript.png",
+    icon_mobile: BiLogoTypescript,
   },
   {
     name: "React JS",
     icon: "/assets/tech/reactjs.png",
+    icon_mobile: FaReact,
   },
   {
     name: "Redux Toolkit",
     icon: "/assets/tech/redux.png",
+    icon_mobile: TbBrandRedux,
   },
   {
     name: "Tailwind CSS",
     icon: "/assets/tech/tailwind.png",
+    icon_mobile: RiTailwindCssFill,
   },
   {
     name: "Node JS",
     icon: "/assets/tech/nodejs.png",
+    icon_mobile: RiNodejsLine,
   },
   {
     name: "MongoDB",
     icon: "/assets/tech/mongodb.png",
+    icon_mobile: SiMongodb,
   },
   {
     name: "Three JS",
     icon: "/assets/tech/threejs.svg",
+    icon_mobile: TbBrandThreejs,
   },
   {
     name: "Next JS",
     icon: "/assets/tech/next.svg",
+    icon_mobile: RiNextjsFill,
   },
   {
     name: "git",
     icon: "/assets/tech/git.png",
+    icon_mobile: FaGitAlt,
   },
 ];
 
