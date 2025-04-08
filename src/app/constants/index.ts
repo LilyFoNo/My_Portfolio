@@ -30,14 +30,14 @@ export const navLinks = [
 ];
 
 const socialMediaIcons = [
-  // {
-  //   title: "LinkedIn",
-  //   icon: "FaLinkedinIn",
-  //   color: "#0072b1",
-  //   size: 35,
-  //   url: "https://www.linkedin.com/in/liliana-forero-2b6099348/",
-  //   className: "rounded-xl hover:shadow-linkedin",
-  // },
+  {
+    title: "LinkedIn",
+    icon: "FaLinkedinIn",
+    color: "#0072b1",
+    size: 35,
+    url: "https://www.linkedin.com/in/liliana-forero-noguera/?originalSubdomain=co",
+    className: "rounded-xl hover:shadow-linkedin",
+  },
   {
     title: "GitHub",
     icon: "IoLogoGithub",
