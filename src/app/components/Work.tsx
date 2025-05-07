@@ -83,7 +83,7 @@ const Work = () => {
                 <div className="flex item-center gap-4">
                   <Link
                     href={project.url}
-                    onClick={() => window.open(project.url, "_blank")}
+                    target="_blank"
                   >
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
@@ -98,7 +98,7 @@ const Work = () => {
                   </Link>
                   <Link
                     href={project.link}
-                    onClick={() => window.open(project.link, "_blank")}
+                    target="_blank"
                   >
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
