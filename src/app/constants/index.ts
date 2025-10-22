@@ -44,7 +44,7 @@ const socialMediaIcons = [
     color: "white",
     size: 35,
     url: "https://github.com/LilyFoNo",
-    className: "ounded-full hover:shadow-gitHub",
+    className: "rounded-full hover:shadow-gitHub",
   },
 ];
 

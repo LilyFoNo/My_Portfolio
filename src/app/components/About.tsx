@@ -5,7 +5,6 @@ import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 import { staggerContainer } from "../utils/motion";
 import Resume from "./Resume";
-import { StarsBackground } from "./ui/stars-background";
 
 const AboutComponent = () => {
   return (
@@ -24,7 +23,6 @@ const AboutComponent = () => {
           </motion.div>
           <Resume />
         </motion.section>
-          <StarsBackground />
     </>
   );
 };

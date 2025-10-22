@@ -7,6 +7,7 @@ import {
   StarsCanvas,
   Navbar,
 } from "./components";
+import { StarsBackground } from "./components/ui/stars-background";
 
 export const metadata: Metadata = {
   title: "Liliana | Portfolio",
@@ -26,10 +27,11 @@ export default function Home() {
         </div>
         <AboutComponent />
         <WorksComponent />
-        <div className="relative z-0">
+        {/* <div className="relative z-0"> */}
           <ContactComponent />
-          <StarsCanvas />
-        </div>
+          {/* <StarsCanvas /> */}
+        {/* </div> */}
+        <StarsBackground />
       </div>
     </>
   );

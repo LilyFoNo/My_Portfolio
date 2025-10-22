@@ -17,12 +17,13 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <ProgressBar onIsLoading={handleIsLoading} />
+        {/* <ProgressBar onIsLoading={handleIsLoading} />
         {!isLoading && (
           <div id="info">
             {children}
           </div>
-        )}
+        )} */}
+            {children}
       </body>
     </html>
   );
