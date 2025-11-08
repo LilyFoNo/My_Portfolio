@@ -8,121 +8,143 @@ import Image from "next/image";
 import { socialMediaIcons } from "../constants";
 import Link from "next/link";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import BlobPage from "./Blob";
 
 const Hero = () => {
   return (
-    <section
-      className="relative w-full h-screen overflow-x-hidden flex justify-center items-center gap-5 lg:flex-row flex-col"
-      id="hero"
-    >
-      <div className="order-2 lg:order-none flex gap-5 justify-center">
-        <div className="flex flex-col justify-center items-center">
-          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
+    <>
+      <section
+        className={`relative h-screen overflow-x-hidden flex lg:justify-between items-center gap-5 lg:flex-row flex-col sm:px-16 px-6`}
+        id="hero"
+      >
+        <div className="order-2 lg:order-none flex gap-5 justify-center lg:w-1/3 mx-auto">
+          <div className="flex flex-col justify-center items-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 0.5 } }}
+              className="w-5 h-5 rounded-full bg-[#915eff]"
+            />
+            <motion.div
+              initial={{ height: "0rem", opacity: 0 }}
+              animate={{
+                height: "20rem",
+                opacity: 1,
+                transition: { duration: 1, ease: "easeIn" },
+              }}
+              className="w-1 violet-gradient"
+            />
+          </div>
           <motion.div
-            initial={{ height: "0rem", opacity: 0 }}
-            animate={{
-              height: "20rem",
-              opacity: 1,
-              transition: { duration: 1, ease: "easeIn" },
-            }}
-            className="w-1 violet-gradient"
-          />
-        </div>
-        <div className="flex flex-col gap-5 w-1/3">
-          <motion.h1
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}
-            className={`${styles.heroHeadText} font-shadowsIntoLight w-fit`}
+            className="flex flex-col gap-5"
           >
-            Hi, I'm&nbsp;
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#94ccb4] via-[#d05de2] to-[#f0aa63] font-moonDance">
-              Liliana
-            </span>
-          </motion.h1>
-          <TextGenerateEffect
-            className={`${styles.heroSubText} mt-2 text-white-100 font-shadowsIntoLight text-justify`}
-            words="Full-stack developer specializing in dynamic web applications. Currently expanding my expertise in 3D development to create immersive user experiences."
-          />
-          <div className="flex gap-10 justify-center w-1/2">
-            {socialMediaIcons.map((icon) => {
-              const img =
-                icon.icon === "FaLinkedinIn" ? (
-                  <FaLinkedinIn color={`${icon.color}`} size={icon.size} />
-                ) : (
-                  <IoLogoGithub color={`${icon.color}`} size={icon.size} />
-                );
-              return (
-                <motion.div
-                  initial={{ x: -100, opacity: 0 }}
-                  animate={{
-                    x: 100,
-                    opacity: 1,
-                    transition: { duration: 1, delay: 2 },
-                  }}
-                  className={`${styles.iconDiv} ${icon.className}`}
-                  key={icon.title}
-                >
-                  <Link
-                    href={`${icon.url}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+            <h1
+              className={`${styles.heroHeadText} font-shadowsIntoLight w-fit text-center`}
+            >
+              Hi, I'm&nbsp;
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#94ccb4] via-[#d05de2] to-[#f0aa63] font-moonDance">
+                Liliana
+              </span>
+            </h1>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 1, delay: 0.2 } }}
+            >
+              <TextGenerateEffect
+                className={`${styles.heroSubText} mt-2 text-white-100 font-shadowsIntoLight text-justify`}
+                words="Full-stack developer specializing in dynamic web applications. Currently expanding my expertise in 3D development to create immersive user experiences."
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: 1, delay: 1 },
+              }}
+              className="flex gap-10 justify-center w-1/2 mx-auto"
+            >
+              {socialMediaIcons.map((icon) => {
+                const img =
+                  icon.icon === "FaLinkedinIn" ? (
+                    <FaLinkedinIn color={`${icon.color}`} size={icon.size} />
+                  ) : (
+                    <IoLogoGithub color={`${icon.color}`} size={icon.size} />
+                  );
+                return (
+                  <div
+                    className={`${styles.iconDiv} ${icon.className}`}
+                    key={icon.title}
                   >
-                    {img}
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
+                    <Link
+                      href={`${icon.url}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {img}
+                    </Link>
+                  </div>
+                );
+              })}
+              <div className="border border-[#a078f7] w-fit px-5 rounded-full flex items-center ">
+                <p className="font-indieFlower">Resume</p>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
 
-      <div className="img relative order-1 lg:order-none flex justify-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { duration: 0.4, ease: "easeIn" },
-          }}
-          className="relative rounded-full flex items-center justify-center w-[10rem] h-[10rem] xl:w-[15.7rem] xl:h-[15.7rem]"
-        >
-          <Image
-            src={"/profile.jpeg"}
-            alt="profile picture"
-            fill
-            quality={100}
-            className=" rounded-full"
-          />
-        </motion.div>
-
-        <motion.svg
-          className="w-[200px] xl:w-[30rem] h-[200px] xl:h-[28rem] absolute -top-20"
-          fill="transparent"
-          viewBox="0 0 506 506"
-          xmlns="http://www.w3.0rg/2000/svg"
-        >
-          <motion.circle
-            cx="253"
-            cy="253"
-            r="210"
-            stroke="#402151"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ strokeDasharray: "24 10 0 0", opacity: 0 }}
+        <div className="img relative order-1 lg:order-none flex justify-center mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
-              rotate: [120, 360],
+              transition: { duration: 0.4, ease: "easeIn" },
             }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          />
-        </motion.svg>
-      </div>
-    </section>
+            className="relative rounded-full flex items-center justify-center w-[10rem] h-[10rem] xl:w-[15.7rem] xl:h-[15.7rem]"
+          >
+            <Image
+              src={"/profile.jpeg"}
+              alt="profile picture"
+              fill
+              quality={100}
+              className=" rounded-full"
+            />
+          </motion.div>
+
+          <motion.svg
+            className="w-[200px] xl:w-[30rem] h-[200px] xl:h-[28rem] absolute -top-20"
+            fill="transparent"
+            viewBox="0 0 506 506"
+            xmlns="http://www.w3.0rg/2000/svg"
+          >
+            <motion.circle
+              cx="253"
+              cy="253"
+              r="210"
+              stroke="#a078f7"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              initial={{ strokeDasharray: "24 10 0 0", opacity: 0 }}
+              animate={{
+                opacity: 1,
+                strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
+                rotate: [120, 360],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            />
+          </motion.svg>
+        </div>
+        {/* <div className="absolute bottom-5 left-1/2"> */}
+          <BlobPage id="about" />
+        {/* </div> */}
+      </section>
+    </>
   );
 };
 

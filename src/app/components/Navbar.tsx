@@ -84,7 +84,7 @@ const Navbar = ({ sections }: { sections: string[] }) => {
                       activeSection === link.id
                         ? `${styles.textColor}`
                         : "text-secondary"
-                    } hover:text-white text-[18px] font-medium cursor-pointer hover:border-b hover:border-[#7e00ff] hover:rounded-[10px]`}
+                    } hover:text-white text-[18px] font-medium cursor-pointer hover:border-b hover:border-[#7e00ff] hover:rounded-[10px] px-2`}
                     onClick={() => handleSectionClick(link.path)}
                   >
                     <Link href={link.path} className=" font-preahvihear px-1">
@@ -94,7 +94,7 @@ const Navbar = ({ sections }: { sections: string[] }) => {
                 );
               })}
             </ul>
-            <div className="sm:hidden flex felx-1 justify-end items-center">
+            <div className="sm:hidden flex flex-1 justify-end items-center">
               {toggle ? (
                 <IoMdClose
                   size={30}

@@ -1,14 +1,25 @@
 "use client";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ScrollArea } from "./ui/scroll-area";
 import { motion } from "motion/react";
 import { about, education } from "../constants";
 import Tech from "./Tech";
 import { styles } from "../styles";
+import { useEffect, useState } from "react";
+import Loader2 from "./Loader2";
 
 const Resume = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <motion.div
@@ -33,7 +44,9 @@ const Resume = () => {
             <div className="min-h-[70vh] w-full">
               <TabsContent value="education" className="w-full">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className={`${styles.sectionHeadText} ${styles.textColor2}`}>
+                  <h3
+                    className={`${styles.sectionHeadText} ${styles.textColor2}`}
+                  >
                     {education.title}
                   </h3>
                   <ScrollArea className="h-[400px]">
@@ -65,12 +78,20 @@ const Resume = () => {
               </TabsContent>
               <TabsContent value="skills" className="w-full h-full">
                 <div className="flex flex-col gap-[40px]">
-                  <h3 className={`${styles.sectionHeadText} ${styles.textColor}`}>
+                  <h3
+                    className={`${styles.sectionHeadText} ${styles.textColor}`}
+                  >
                     My Skills
                   </h3>
-                  <ScrollArea className="h-[350px]">
-                    <Tech />
-                  </ScrollArea>
+                  {isLoading ? (
+                    <div className="h-[350px] py-10 mx-auto">
+                      <Loader2 />
+                    </div>
+                  ) : (
+                    <ScrollArea className="h-[350px]">
+                      <Tech />
+                    </ScrollArea>
+                  )}
                 </div>
               </TabsContent>
               <TabsContent
@@ -78,7 +99,9 @@ const Resume = () => {
                 className="w-full text-center xl:text-left"
               >
                 <div className="flex flex-col gap-[30px]">
-                  <h3 className={`${styles.sectionHeadText} ${styles.textColor2}`}>
+                  <h3
+                    className={`${styles.sectionHeadText} ${styles.textColor2}`}
+                  >
                     {about.title}
                   </h3>
                   <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 font-preahvihear text-justify">

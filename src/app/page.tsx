@@ -8,6 +8,7 @@ import {
   Navbar,
 } from "./components";
 import { StarsBackground } from "./components/ui/stars-background";
+import BlobPage from "./components/Blob";
 
 export const metadata: Metadata = {
   title: "Liliana | Portfolio",
@@ -22,15 +23,10 @@ export default function Home() {
     <>
       <Navbar sections={["about", "work", "contact"]} />
       <div className="relative z-0 bg-primary select-none">
-        <div className=" bg-cover bg-no-repeat bg-center">
-          <Hero />
-        </div>
+        <Hero />
         <AboutComponent />
         <WorksComponent />
-        {/* <div className="relative z-0"> */}
-          <ContactComponent />
-          {/* <StarsCanvas /> */}
-        {/* </div> */}
+        <ContactComponent />
         <StarsBackground />
       </div>
     </>
