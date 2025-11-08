@@ -80,7 +80,7 @@ const Work = () => {
                   })}
                 </ul>
                 <div className="border border-white/20 "></div>
-                <div className="flex item-center gap-4">
+                {/* <div className="flex item-center gap-4">
                   <Link
                     href={project.url}
                     target="_blank"
@@ -114,7 +114,7 @@ const Work = () => {
                       </Tooltip>
                     </TooltipProvider>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="w-full xl:w-[50%]">
