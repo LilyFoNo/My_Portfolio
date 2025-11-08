@@ -23,7 +23,7 @@ const AboutComponent = () => {
             <h2 className={`${styles.sectionHeadText} ${styles.textColor}`}>Overview.</h2>
           </motion.div>
           <Resume />
-          <BlobPage id="work"/>
+          {/* <BlobPage id="work"/> */}
         </motion.section>
     </>
   );

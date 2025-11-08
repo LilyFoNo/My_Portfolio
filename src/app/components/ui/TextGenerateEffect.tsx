@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "motion/react";
 import { cn } from "@/app/utils/cn";
+import { styles } from "@/app/styles";
 
 export const TextGenerateEffect = ({
   words,
@@ -57,7 +58,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-bold", className)}>
       <div className="mt-4">
-        <div className=" dark:text-white text-black text-2xl leading-snug tracking-wide">
+        <div className={`${styles.heroSubText} dark:text-white text-black text-2xl leading-snug tracking-wide pr-4`}>
           {renderWords()}
         </div>
       </div>

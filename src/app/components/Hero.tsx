@@ -14,10 +14,10 @@ const Hero = () => {
   return (
     <>
       <section
-        className={`relative h-screen overflow-x-hidden flex lg:justify-between items-center gap-5 lg:flex-row flex-col sm:px-16 px-6`}
+        className={`relative lg:h-screen overflow-x-hidden flex lg:justify-between items-center gap-5 lg:flex-row flex-col sm:px-16 px-6 sm:pt-16 pt-36`}
         id="hero"
       >
-        <div className="order-2 lg:order-none flex gap-5 justify-center lg:w-1/3 mx-auto">
+        <div className="order-2 lg:order-none flex gap-5 justify-center lg:w-1/3 mx-auto pt-10 lg:pt-0 ">
           <div className="flex flex-col justify-center items-center">
             <motion.div
               initial={{ opacity: 0 }}
@@ -52,7 +52,7 @@ const Hero = () => {
               animate={{ opacity: 1, transition: { duration: 1, delay: 0.2 } }}
             >
               <TextGenerateEffect
-                className={`${styles.heroSubText} mt-2 text-white-100 font-shadowsIntoLight text-justify`}
+                className={`mt-2 font-shadowsIntoLight text-justify`}
                 words="Full-stack developer specializing in dynamic web applications. Currently expanding my expertise in 3D development to create immersive user experiences."
               />
             </motion.div>
@@ -87,33 +87,33 @@ const Hero = () => {
                   </div>
                 );
               })}
-              <div className="border border-[#a078f7] w-fit px-5 rounded-full flex items-center ">
+              {/* <div className="border border-[#a078f7] w-fit px-5 rounded-full flex items-center ">
                 <p className="font-indieFlower">Resume</p>
-              </div>
+              </div> */}
             </motion.div>
           </motion.div>
         </div>
 
-        <div className="img relative order-1 lg:order-none flex justify-center mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: { duration: 0.4, ease: "easeIn" },
-            }}
-            className="relative rounded-full flex items-center justify-center w-[10rem] h-[10rem] xl:w-[15.7rem] xl:h-[15.7rem]"
-          >
+        <motion.div
+          className="img relative order-1 lg:order-none flex justify-center mx-auto -mt-10 sm:-mt-5 md:mt-24 lg:mt-0"
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: { duration: 1, ease: "easeIn" },
+          }}
+        >
+          <div className="relative rounded-full flex items-center justify-center w-[15rem] h-[15rem] xl:w-[15.7rem] xl:h-[15.7rem] ">
             <Image
-              src={"/profile.jpeg"}
+              src={"/profile.avif"}
               alt="profile picture"
               fill
               quality={100}
-              className=" rounded-full"
+              className=" rounded-full absolute"
             />
-          </motion.div>
+          </div>
 
           <motion.svg
-            className="w-[200px] xl:w-[30rem] h-[200px] xl:h-[28rem] absolute -top-20"
+            className="w-[20rem] xl:w-[30rem] h-[20rem] xl:h-[28rem] absolute -top-10 xl:-top-20"
             fill="transparent"
             viewBox="0 0 506 506"
             xmlns="http://www.w3.0rg/2000/svg"
@@ -139,9 +139,9 @@ const Hero = () => {
               }}
             />
           </motion.svg>
-        </div>
+        </motion.div>
         {/* <div className="absolute bottom-5 left-1/2"> */}
-          <BlobPage id="about" />
+        <BlobPage id="about" />
         {/* </div> */}
       </section>
     </>
